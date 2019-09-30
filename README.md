@@ -73,7 +73,6 @@ if (/.*Firefox.*/.test(agent)) {
 ```
 ## 一定位置显示
 方式一：
-```js
 $(window).scroll(function(){
     var st = $(this).scrollTop();
     if(st > 100){
@@ -82,7 +81,6 @@ $(window).scroll(function(){
         $('.right_bigbox').hide();
     }
 });
-```
 方式二：
 ```js
 $(window).scroll(function(){
