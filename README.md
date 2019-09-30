@@ -122,16 +122,17 @@ window.history.go(-1);
 window.location.href=“”
 ```
 ## 实现下拉框滑动效果
-```html
 slideToggle([s],[e],[fn])方法
 [speed],[easing],[fn]Number/String,String,Function
 speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
 easing:(Optional) 用来指定切换效果，默认是"swing"，可用参数"linear"
 fn:在动画完成时执行的函数，每个元素执行一次。
-例子：
+例子：html部分
+```html
 <p>这是一个段落。</p>
 <button>切换 slideUp() 和 slideDown()</button>
 ```
+js部分
 ```js
 $(document).ready(function(){
 	$("button").click(function(){
