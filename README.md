@@ -1,4 +1,4 @@
-# js-commonly-problem（js工作中常遇到的问题总结）
+# js-work-problem（js工作中常遇到的问题总结）
 ## 如何判断是否为PC端 还是 移动端
 ```js
 function goPAGE() {
