@@ -178,3 +178,52 @@ $(document).ready(function(){
     var str=" 123 123 3 123123 23 2 "
     console.log(this.trim(str,'all'))
 ```
+### 2.大小写切换(字母)
+```js
+/*
+* 大小写字母切换 传递参数 字符串string，切换类型type（1,2,3,4,5）
+* 1 首字母大写 2 首字母小写 3 大小写转换 4 全部大写 5 全部小写
+*/
+changeCase (str,type) {
+      function ToggleCase(str){
+        var itemText = '';
+        str.split('').forEach(
+          function(item){
+            if(/^([a-z]+)/.test(item)){
+              itemText += item.toUpperCase();
+            } else if(/^([A-Z]+)/.test(item)){
+              itemText += item.toLowerCase();
+            } else {
+              itemText += item;
+            }
+          }
+        )
+        return itemText;
+      }
+      switch(type){
+        case '1':
+          return str.replace(/^(\w)(\w+)/,function(v,v1,v2){
+            return v1.toUpperCase() + v2.toLowerCase();
+          })
+          break;
+        case '2':
+          return str.replace(/^(\w)(\w+)/,function(v,v1,v2){
+            return v1.toLowerCase() + v2.toUpperCase();
+          })
+          break;
+        case '3':
+          return ToggleCase(str);
+          break;
+        case '4':
+          return str.toUpperCase();
+          break;
+        case '5':
+          return str.toLowerCase();
+          break;
+        default:
+          return str;
+      }
+    }
+    var str = 'abCdEFGiougFRTWRddsaikcb123456';
+    alert(this.changeCase(str,'3'))
+```
