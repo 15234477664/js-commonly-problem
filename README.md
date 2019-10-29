@@ -149,3 +149,32 @@ $(document).ready(function(){
  });
 });
 ```
+## 字符串操作
+
+### 1.去除字符串空格
+```js
+/*
+* 去除字符串空格 传递参数 字符串string，空格位置type（前、后、全部、前后）
+* 前 before 后 after 全部 all 前后 befa
+*/
+    trim (str,type) {
+      switch(type){
+        case 'all' :
+          return str.replace(/\s+/g,'');
+          break;
+        case 'befa' :
+          return str.replace(/(^\s*)|(\s*$)/g,'');
+          break;
+        case 'before' :
+          return str.replace(/(^s*)/g,'');
+          break;
+        case 'after' :
+          return str.replace(/(^s*$)/g,'');
+          break;
+        default :
+          return str;
+      }
+    }
+    var str=" 123 123 3 123123 23 2 "
+    console.log(this.trim(str,'all'))
+```
