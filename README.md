@@ -227,3 +227,18 @@ changeCase (str,type) {
     var str = 'abCdEFGiougFRTWRddsaikcb123456';
     alert(this.changeCase(str,'3'))
 ```
+### 3.复制字符串
+```js
+/*
+* 复制字符串 传递参数 字符串string，count 复制次数
+*/
+    repeatStr (str,count) {
+      var text = '';
+      for(var i=0;i < count;i++){
+        text += str;
+      }
+      return text;
+    }
+    var str="123"
+    alert(this.repeatStr(str,5))
+```
