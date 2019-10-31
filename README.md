@@ -287,4 +287,7 @@ checkPwd:function(pwd){
         return pwdLv;
       }
     }
+    
+    var str="zzt910725..."
+    alert(this.checkPwd(str))
 ```
