@@ -373,6 +373,7 @@ minArr:function(arr){
     alert(this.covArr(arr));
 ```
 ## 常用方法
+### 获取url参数
 ```js
      /*
     * 获取url参数 参数 url
