@@ -350,7 +350,7 @@ minArr:function(arr){
     alert(this.maxArr(arr));
     alert(this.minArr(arr));
 ```
-### 3.
+### 3.和、平均值
 ```js
     /*
      * 数组求和、平均值 参数 数组arr，主要针对数字类型数组
@@ -371,4 +371,29 @@ minArr:function(arr){
     var arr=[1,3,5,6,7,9,12,15,17,19];
     alert(this.sumArr(arr));
     alert(this.covArr(arr));
+```
+## 常用方法
+```js
+     /*
+    * 获取url参数 参数 url
+    */
+    getUrlParmt (url) {
+        url = url ? url : window.localtion.href
+        var _pa = url.substring(url.indexOf('?')+1)
+        var _arrs = _pa.split('&')
+        var _rs = {}
+        for(var i=0; i<_arrs.length;i++){
+          var pos = _arrs[i].indexOf('=');
+          if(pos === -1){
+            continue;
+          }
+          var name = _arrs[i].substring(0,pos)
+          var value = window.decodeURIComponent(_arrs[i].substring(pos + 1))
+          _rs[name] = value
+        }
+      return _rs;
+    }
+    
+    var url='http://www.baidu.com/search?id=123&username=lijian';
+    console.log(JSON.stringify(this.getUrlParmt(url)));
 ```
