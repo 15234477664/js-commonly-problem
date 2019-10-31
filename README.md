@@ -308,6 +308,7 @@ countStr (str,str2) {
     alert(this.countStr(str,'blog'))
 ```
 ## 数组操作
+### 1.数组快速排序
 ```js
 /*
 * 数组快速排序 参数 数组arr
@@ -332,4 +333,20 @@ quickSort (arr) {
     
     var arr=['1','2','1','3','4','7','1','1','9','1','1'];
     alert(this.quickSort(arr));
+```
+### 2.最大、最小值
+```js
+/*
+* 数组最大、最小值 参数 数组arr，主要针对数字类型数组
+*/
+maxArr (arr){
+      return Math.max.apply(null,arr);
+    },
+minArr:function(arr){
+      return Math.min.apply(null,arr);
+    }
+    
+    var arr=[1,3,5,6,7,9,12,15,17,19];
+    alert(this.maxArr(arr));
+    alert(this.minArr(arr));
 ```
