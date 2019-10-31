@@ -175,6 +175,7 @@ $(document).ready(function(){
           return str;
       }
     }
+    
     var str=" 123 123 3 123123 23 2 "
     console.log(this.trim(str,'all'))
 ```
@@ -224,6 +225,7 @@ changeCase (str,type) {
           return str;
       }
     }
+    
     var str = 'abCdEFGiougFRTWRddsaikcb123456';
     alert(this.changeCase(str,'3'))
 ```
@@ -239,6 +241,7 @@ changeCase (str,type) {
       }
       return text;
     }
+    
     var str="123"
     alert(this.repeatStr(str,5))
 ```
@@ -251,6 +254,7 @@ changeCase (str,type) {
       let raRegExp = new RegExp(str2,'g');
       return str.replace(raRegExp,str3);
     }
+    
     var str="abcdkeabcsfeabc";
     var str1="abc";
     var str2="A";
@@ -261,7 +265,7 @@ changeCase (str,type) {
 /*
 * 密码强度检测 传递参数 密码字符串string，
 */
-checkPwd:function(pwd){
+checkPwd (pwd) {
       var pwdLv = '';
       if(pwd.length >=6) {
         if(/[a-zA-Z]+/.test(pwd) && /[0-9]+/.test(pwd) && /\W+\D+/.test(pwd)) {
@@ -290,4 +294,42 @@ checkPwd:function(pwd){
     
     var str="zzt910725..."
     alert(this.checkPwd(str))
+```
+### 6.查找字符串出现次数
+```js
+/*
+* 查找字符串出现次数 传递参数（字符串，要查找字符串），
+*/
+countStr (str,str2) {
+      return str.split(str2).length-1;
+    }
+    
+    var str = 'asfsdfsblogdffsdrwblogrwrwrblogweriosfposdblogfpweproblogkwerblogmlwejsdflkblogjiouoqblognw'
+    alert(this.countStr(str,'blog'))
+```
+## 数组操作
+```js
+/*
+* 数组快速排序 参数 数组arr
+*/
+quickSort (arr) {
+      if(arr.length <= 1){
+        return arr;
+      }
+      var num = Math.floor(arr.length/2);
+      var numVal = arr.splice(num,1);
+      var left=[];
+      var right=[];
+      for(var i=0;i < arr.length;i++){
+        if(arr[i] < numVal){
+          left.push(arr[i]);
+        }else{
+          right.push(arr[i]);
+        }
+      }
+      return this.quickSort(left).concat([numVal],this.quickSort(right));
+    }
+    
+    var arr=['1','2','1','3','4','7','1','1','9','1','1'];
+    alert(this.quickSort(arr));
 ```
