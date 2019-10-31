@@ -256,3 +256,35 @@ changeCase (str,type) {
     var str2="A";
     alert(this.replaceAll(str,str1,str2))
 ```
+### 5.密码强度检测
+```js
+/*
+* 密码强度检测 传递参数 密码字符串string，
+*/
+checkPwd:function(pwd){
+      var pwdLv = '';
+      if(pwd.length >=6) {
+        if(/[a-zA-Z]+/.test(pwd) && /[0-9]+/.test(pwd) && /\W+\D+/.test(pwd)) {
+          var pwdLv = '强';
+          return pwdLv;
+        } else if(/[a-zA-Z]+/.test(pwd) || /[0-9]+/.test(pwd) || /\W+\D+/.test(pwd)) {
+          if(/[a-zA-Z]+/.test(pwd) && /[0-9]+/.test(pwd)) {
+            pwdLv = '中';
+            return pwdLv;
+          } else if(/\[a-zA-Z]+/.test(pwd) && /\W+\D+/.test(pwd)) {
+            pwdLv = '中';
+            return pwdLv;
+          } else if(/[0-9]+/.test(pwd) && /\W+\D+/.test(pwd)) {
+            pwdLv = '中';
+            return pwdLv;
+          } else {
+            pwdLv = '弱'
+            return pwdLv;
+          }
+        }
+      } else {
+        pwdLv = '弱'
+        return pwdLv;
+      }
+    }
+```
