@@ -350,3 +350,25 @@ minArr:function(arr){
     alert(this.maxArr(arr));
     alert(this.minArr(arr));
 ```
+### 3.
+```js
+    /*
+     * 数组求和、平均值 参数 数组arr，主要针对数字类型数组
+    */
+    sumArr:function(arr){
+      var sum = 0;
+      for(var i=0;i < arr.length;i++){
+        sum += arr[i];
+      }
+      return sum;
+    },
+    covArr:function(arr){
+      var sum=this.sumArr(arr);
+      var cov=sum/arr.length;
+      return cov;
+    }
+    
+    var arr=[1,3,5,6,7,9,12,15,17,19];
+    alert(this.sumArr(arr));
+    alert(this.covArr(arr));
+```
