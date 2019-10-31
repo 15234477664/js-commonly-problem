@@ -242,3 +242,17 @@ changeCase (str,type) {
     var str="123"
     alert(this.repeatStr(str,5))
 ```
+### 4.字符串替换
+```js
+    /*
+    * 字符串替换指定字符串 传递参数（字符串，被替换字符串，替换字符串），
+    */
+    replaceAll (str,str2,str3) {
+      let raRegExp = new RegExp(str2,'g');
+      return str.replace(raRegExp,str3);
+    }
+    var str="abcdkeabcsfeabc";
+    var str1="abc";
+    var str2="A";
+    alert(this.replaceAll(str,str1,str2))
+```
